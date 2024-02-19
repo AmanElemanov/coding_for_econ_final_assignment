@@ -1,0 +1,59 @@
+    1  touch README.md
+    2  # Creating a folder structure
+    3  mkdir data/
+    4  mkdir data/raw/
+    5  cd data/
+    6  ls --help
+    7  ls
+    8  ks -a
+    9  ls -a
+   10  cd ../
+   11  ls 
+   12  ls -ha
+   13  ls -hal
+   14  # Downloading the data
+   15  curl --help
+   16  cd data/raw/
+   17  curl -L -o worldbank_immunization.csv https://osf.io/download/gk5cn/
+   18  cd ../../
+   19  head --help
+   20  head data/raw/worldbank_immunization.csv 
+   21  cd data/raw/worldbank_immunization.csv 
+   22  head -n 13 
+   23  cd data/raw/worldbank_immunization.csv 
+   24  cd data/raw/
+   25  head worldbank_immunization.csv 
+   26  head -n 13 worldbank_immunization.csv 
+   27  cd ../../
+   28  # Checking column names from the raw .csv file
+   29  pip install csvkit
+   30  csvcut --help
+   31  cd data/raw/
+   32  csvcut -n worldbank_immunization.csv 
+   33  # Selecting several relevant columns from the raw .csv file and save the new .csv file to the data/derived/ folder
+   34  cd ../../
+   35  mkdir data/derived/
+   36  csvcut --columns year,countrycode,pop,imm,gdppc,lngdppc data/raw/worldbank_immunization.csv > data/derived/immunization_relevant_cols.csv
+   37  csvcut -n data/derived/immunization_relevant_cols.csv 
+   38  # Initializing git repo; adding, committing, and pushing files and folders
+   39  git init
+   40  ls -hal
+   41  git status
+   42  git remote add origin https://github.com/AmanElemanov/coding_for_econ_final_assignment.git
+   43  git branch -M main
+   44  git push -u origin main
+   45  git add README.md 
+   46  git status
+   47  git commit -m "Added a README.md file"
+   48  git config --global user.email "aman.and.naima@gmail.com"
+   49  git config --global user.name "Aman Elemanov"
+   50  git commit -m "Added a README.md file"
+   51  git push -u origin main
+   52  git config credential.username "AmanElemanov"
+   53  git push -u origin main
+   54  git status
+   55  git add data/
+   56  git commit -m "Added data/ folder with repsective raw/ and /derived subfolders and .csv files"
+   57  git push
+   58  git status
+   59  history > history.txt
