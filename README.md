@@ -11,3 +11,4 @@
 #### Step 2: Practice with dictionaries.
 #### Step 3: Practice with "for" loop examples.
 #### Step 4: Practice Steps 1-4 in exercise with worldbank_immunization.csv. Task: Display percentage of children vaccinated against measles for each country in 2017 only.
+### Task 3: Work with worldbank_immunization.csv file in Stata.
